@@ -1,20 +1,20 @@
 "use strict";
 
-const spredTheString = (str) => {
-	if (Object.prototype.toString.call(str) === "[object String]") {
-		const strN = str.trim();
-		if (strN.length > 30) {
-			return strN.split('').splice(0, 30).join('') + '...';
-		}
-		else { 
-			return strN;
-		}
-		
-	} else { 
-		return ('введите другой аргумент, это не строка');
+const arr = ["123","456","789","101112","121314","2456","4281"];
+arr.forEach(el => { 
+	if (el[0] === "2" || el[0] === "4") { 
+		console.log(el);
 	}
-};
-console.log(spredTheString(1111111111111111));
-
- console.log(spredTheString('ggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg'));
- 
+});
+const n = 100;
+for (let i = 2; i <= n; i++) {
+  for (let j = 2; j <= i; j++) {
+    if ((i % j == 0) && (j != i)) {
+      break;
+    } else {
+      console.log(`число: ${i}; делители: ${i} и ${1}`);
+      break;
+    }
+  }
+}
+//не совсем понял про вывод делителя, так как простое число вроде делится только на самого себя и единицу
