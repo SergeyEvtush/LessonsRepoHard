@@ -1,0 +1,21 @@
+
+body{
+	width: 100%;
+	margin: 0 auto;
+}
+.list-days{
+	width: 50%;
+	margin: 0 auto;
+}
+li{
+	text-align: center;
+	margin: 20px;
+	font-size: 30px;
+	list-style: none;
+}
+.bold{
+	font-weight: bold;
+}
+.cursive{
+	font-style: italic;
+}

@@ -1,20 +1,39 @@
 "use strict";
 
-const arr = ["123","456","789","101112","121314","2456","4281"];
-arr.forEach(el => { 
-	if (el[0] === "2" || el[0] === "4") { 
-		console.log(el);
+/* Необходимо выполнить в отдельном js файле, подключенному к отдельной HTML странице
+
+1) Создать массив week и записать в него дни недели в виде строк
+
+Вывести на экран все дни недели
+Каждый из них с новой строчки
+Выходные дни - курсивом
+Текущий день - жирным шрифтом(использовать объект даты)
+2) Запушить проект в репозиторий для усложненных заданий на Github */
+const listDays = document.querySelector('.list-days');
+const days = [
+	'воскресенье',
+	'понедельник',
+	'вторник',
+	'среда',
+	'четверг',
+	'пятница',
+	'суббота',
+];
+
+const weekDays = (date, daysArr) => {
+	return daysArr[date.getDay()];
+};
+const date = new Date();
+days.forEach((el,index)=>
+{
+	const li = document.createElement('li');
+	li.innerText = el;
+		if (weekDays(date, days) === el) { 
+			li.classList.add('bold');
+		}
+		if (index === 0 || index === 6) { 
+			li.classList.add('cursive');
 	}
-});
-const n = 100;
-for (let i = 2; i <= n; i++) {
-  for (let j = 2; j <= i; j++) {
-    if ((i % j == 0) && (j != i)) {
-      break;
-    } else {
-      console.log(`число: ${i}; делители: ${i} и ${1}`);
-      break;
-    }
-  }
-}
-//не совсем понял про вывод делителя, так как простое число вроде делится только на самого себя и единицу
+	listDays.append(li);
+	}
+);
